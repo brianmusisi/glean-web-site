@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="Glean Analytics Ltd">
+      <meta name="author" content="Nathan Baleeta">
+      <title>Glean Analytics</title>
+      <!-- Bootstrap core CSS -->
+      <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+      <!-- Add icon library -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+      <!-- Documentation extras -->
+      <link href="https://getbootstrap.com/docs/4.1/assets/css/docs.min.css" rel="stylesheet">
+      <!-- Favicons -->
+  
+     
+      <script>
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+         ga('create', 'UA-146052-10', 'getbootstrap.com');
+         ga('send', 'pageview');
+      </script>
+      <style>
+         body {overflow-x: hidden;}
+         .thumbnail {
+         height: 300px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         border: 1x solid purple;
+         }
+         .thumbnail img {
+         max-width: 100%;
+         max-height: 100%;
+         display: block;
+         margin: 0 auto;
+         padding:2px;
+         border:2px solid white;
+         }
+         .caption {
+         text-align:center;
+         }
+
+
+
+/* ----------------------- Transparent buttons -------------------- */
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+
+
+
+
+.btn.outline {
+	background: none;
+	padding: 12px 22px;
+}
+
+.btn-primary.outline {
+	border: 2px solid #0099cc;
+	color: #0099cc;
+}
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+	color: #33a6cc;
+	border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+	border-color: #007299;
+	color: #007299;
+	box-shadow: none;
+}
+
+
+/* ----------------------- End of Transparent buttons -------------------- */
+
+
+
+
+
+/* ----------------------- Footer-------------------- */
+.footer-bs {
+    background-color: #3c3d41;
+	padding: 60px 40px;
+	color: rgba(255,255,255,1.00);
+	margin-bottom: 20px;
+	border-bottom-right-radius: 6px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 6px;
+}
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,1.00); font-weight:bold; text-transform:uppercase; }
+.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+.footer-bs .footer-nav h4 {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:10px;
+}
+
+.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
+.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+.footer-bs .footer-social ul { list-style:none; padding:0px; }
+.footer-bs .footer-social h4 {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+.footer-bs .footer-social li { padding:5px 4px;}
+.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+.footer-bs .footer-ns h4 {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:10px;
+}
+.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+@media (min-width: 768px) {
+	.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+}
+
+/* ----------------------- End of Footer-------------------- */
+
+/* ----------------------- Our Team -------------------- */
+/* Three columns side by side */
+.column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Add some shadows to create a card effect */
+
+/* Some left and right padding inside the container */
+.container {
+    padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+/* ----------------------- End of Team -------------------- */
+
+
+.team{
+    padding:75px 0;
+}
+h6.description{
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: #999;
+	border-bottom: 1px solid rgba(0, 0, 0,0.1);
+	padding-bottom: 5px;
+}
+.profile{
+	margin-top: 25px;
+}
+.profile h1{
+	font-weight: normal;
+	font-size: 20px;
+	margin:10px 0 0 0;
+}
+.profile h2{
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 5px;
+	color: #0099cc;
+}
+.profile .img-box{
+	opacity: 1;
+	display: block;
+	position: relative;
+}
+.profile .img-box:after{
+	content:"";
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+}
+.img-box ul{
+	position: absolute;
+	z-index: 2;
+	bottom: 50px;
+	text-align: center;
+	width: 100%;
+	padding-left: 0px;
+	height: 0px;
+	margin:0px;
+	opacity: 0;
+}
+.profile .img-box:after, .img-box ul, .img-box ul li{
+	-webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+}
+.img-box ul i{
+	font-size: 20px;
+	letter-spacing: 10px;
+}
+.img-box ul li{
+	width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #88C425;
+    margin: 2px;
+    padding: 5px;
+	display: inline-block;
+}
+.img-box a{
+	color:#fff;
+}
+.img-box:hover:after{
+	opacity: 1;
+}
+.img-box:hover ul{
+	opacity: 1;
+}
+.img-box ul a{
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+.img-box a:hover li{
+	border-color: #fff;
+	color: #88C425;
+}
+a{
+    color:#88C425;
+}
+a:hover{
+    text-decoration:none;
+    color:#519548;
+}
+i.red{
+    color:#BC0213;
+}
+      </style>
+   </head>
+   <body>
+      <a id="skippy" class="sr-only sr-only-focusable" href="index.html#content">
+         <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+         </div>
+      </a>
+      <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background-color:#FF0000;">
+         <h1 class="media-heading" style="color:white;"><font>Glean Analytics Ltd</font></h1>
+         <div class="navbar-nav-scroll">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+               <li class="nav-item">
+                  <a class="nav-link active" href="index.html" style="color: black;">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link " href="#portfolios" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');" style="color: black;">Portfolios</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#team"  style="color: black;"> Team</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#contacts"   style="color: black;"> Contact Us</a>
+               </li>
+            </ul>
+         </div>
+      </header>
+      <main class="bd-masthead" id="content" role="main" style="background-color:black;color:white;">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-6 mx-auto col-md-6 order-md-2">
+                  <img class="img-fluid mb-3 mb-md-0" src="images/glean2.png" alt="" width="1024" height="860">
+               </div>
+               <div class="col-md-6 order-md-1 text-center text-md-left pr-md-5">
+                  <h1 class="mb-3 bd-text-white-bright">Glean Analytique</h1>
+                  <p class="lead mb-4">
+                     Glean Analytics Ltd is a Ugandan tehnology consulting firm whose main portolios include: Data analytics, Machine learning, Deep Learning, Blockchain & Software development. It was founded in 2018. Visit our portfolios below:
+                  </p>
+                  <div class="d-flex flex-column flex-md-row lead mb-3">
+                     <a href="#portfolios"><button type="button" class="btn btn-warning">Glean Portfolios</button></a>
+                  </div>
+               </div>
+            </div>
+            <script async src="https://cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=getbootstrapcom" id="_carbonads_js"></script>
+         </div>
+      </main>
+      <!-- Portfolios -->
+      <div class="container-fluid" id="portfolios">
+        <br>
+       <h1 class="mb-3 bd-text-white-bright" style="text-align:center; padding:50px;color:red;">Our Portfolios</h1>
+         <div class="row">
+            <div class="col">
+               <div class="card" style="display: flex;border:0px;text-align:center;">
+                  <img class="card-img-top" src="images/analytics.png" alt="Card image cap" style="height:140px;width:140px;margin:0 auto;">
+                  <div class="card-body">
+                     <h5 class="card-title" style="text-align:center;">Data Analytics</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <button type="button" class="btn btn-primary btn-sm outline">Go here</button>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card" style="display: flex;border:0px;text-align:center;">
+                  <img class="card-img-top" src="images/ML.png" alt="Card image cap" style="height:140px;width:140px;margin:0 auto;">
+                  <div class="card-body">
+                     <h5 class="card-title" style="text-align:center;">Machine Learning & Neural networks</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <button type="button" class="btn btn-primary btn-sm outline">Go here</button>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card" style="display: flex;border:0px;text-align:center;">
+                  <img class="card-img-top" src="images/code.png" alt="Card image cap" style="height:140px;width:140px;margin:0 auto;">
+                  <div class="card-body">
+                     <h5 class="card-title" style="text-align:center;">Software Dev't</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <button type="button" class="btn btn-primary btn-sm outline">Go here</button>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card" style="display: flex;border:0px;text-align:center;">
+                  <img class="card-img-top" src="images/blockchain.png" alt="Card image cap" style="height:140px;width:140px;margin:0 auto;">
+                  <div class="card-body">
+                     <h5 class="card-title" style="text-align:center;">Blockchain</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <button type="button" class="btn btn-primary btn-sm outline">Go here</button>
+                  </div>
+               </div>
+
+	   
+            
+            </div>
+         </div>
+         <br>
+         
+      </div>
+      <!-- End of Portfolios -->
+
+<hr style="border-top: 1px solid #8c8b8b;">  
+
+ <!-- Our Team -->
+       <div class="container-fluid" id="team">
+        <br>
+       <h1 class="mb-3 bd-text-white-bright" style="text-align:center; padding:50px;color:black;">Our Team</h1>
+         <div class="row">
+            <div class="col">
+               <div class="card" style="display: flex;border:0px;text-align:center;">
+                  <img class="card-img-top" src="images/avatar.png" alt="Card image cap" style="height:140px;width:140px;margin:0 auto;">
+                  <div class="card-body profile">
+                     <h1>Emoje Ivan</h1>
+		      <h2>Co-founder/ Fullstack Developer</h2>
+		      <p>Data analytics, Machine Learning, Blockchain, IT Infrastructure</p>
+		      <p><button type="button" class="btn btn-primary btn-sm btn-block outline" style="text-transform: lowercase;">ivan.emoje@gleananalytics.io</button></p>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card" style="display: flex;border:0px;text-align:center;">
+                  <img class="card-img-top" src="images/avatar.png" alt="Card image cap" style="height:140px;width:140px;margin:0 auto;">
+                  <div class="card-body profile">
+                     <h1>Brian Musisi</h1>
+              <h2>Co-founder/ Fullstack Developer</h2>
+              <p>Data Science, Data analytics, Blockchain, Machine Learning</p>
+		<p><button type="button" class="btn btn-primary btn-sm btn-block outline" style="text-transform: lowercase;">brian.musisi@gleananalytics.io</button></p>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card" style="display: flex;border:0px;text-align:center;">
+                  <img class="card-img-top" src="images/avatar.png" alt="Card image cap" style="height:140px;width:140px;margin:0 auto;">
+                  <div class="card-body profile">
+                     <h1>Nathan Baleeta</h1>
+              <h2>Co-founder/ Fullstack Developer </h2>
+              <p>Machine Learning, NLP, Computer Vision, Big data analytics, IT DeVops</p>
+		<p><button type="button" class="btn btn-primary btn-sm btn-block outline" style="text-transform: lowercase;">nathan.baleeta@gleananalytics.io</button></p>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+         <br>
+         
+      </div>
+ <!-- End of our team -->
+
+
+
+
+
+
+ <!-- End of our team -->
+
+      <!-- Footer -->
+      <div class="row">
+    <section style="height:80px;"></section>
+	
+    <!----------- Footer ------------>
+    <footer class="footer-bs">
+        <div class="row" id="contacts">
+        	<div class="col-md-3 footer-brand animated fadeInLeft">
+            	<h2>Glean Analytics Ltd</h2>
+                <p>Glean Analytics Ltd is a Ugandan tehnology consulting firm whose main portolios include: Data analytics, Machine learning, Deep Learning, Blockchain & Software development. It was founded in 2018</p>
+                <p>© 2018 Glean Analytics Ltd, All rights reserved</p>
+            </div>
+        	<div class="col-md-4 footer-nav animated fadeInUp">
+            	<h4>Menu —</h4>
+            	<div class="col-md-6">
+                    <ul class="pages">
+                        <li><a href="#">Portfolios</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            	
+            </div>
+        	<div class="col-md-2 footer-social animated fadeInDown">
+            	<h4>Follow Us</h4>
+            	<ul>
+                	<li><a href="#">Facebook</a></li>
+                	<li><a href="#">Twitter</a></li>
+                	<li><a href="#">Instagram</a></li>
+                	
+                </ul>
+            </div>
+        	<div class="col-md-3 footer-ns animated fadeInRight">
+            	<h4>Call us:</h4>
+                <p>You can reach out to the team through these numbers for inquiries:</p>
+                <p>
+                    <ul style="list-style:none;color:white;">
+                	<li>+256 772 121 495</li>
+                	<li>+256 750 330 410</li>
+			        <li>+256 787 264 734</li>
+                	
+                </ul>
+                 </p>
+            </div>
+        </div>
+    </footer>
+    <section style="text-align:center; margin:10px auto;color:red;"><p>Designed by Glean Analytics Ltd</p></section>
+
+</div>
+      <!-- End of Footer -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script><script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script><script src="https://getbootstrap.com/docs/4.1/assets/js/docs.min.js"></script>
+   </body>
+</html>
